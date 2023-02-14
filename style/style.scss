@@ -1,0 +1,556 @@
+$primaryColor : #1E1511;
+$secondaryColor : #f5f5f5;
+$tertierColor : #273954;
+$transparentSecondaryColor : rgba(30, 21, 17, 0.5);
+$transparentPrimaryColor : rgba(245, 245, 245, 0.5);
+$primaryShadow : 4px 4px 10px 0 rgba(0,0,0,.8);
+$primaryGradient : linear-gradient(180deg, rgba(1, 38, 95, 0.54) 0%, rgba(30, 21, 17, 0.5) 100%);
+
+@font-face {
+    font-family: "Giaza";
+    src: url('../public/Font/Giaza.otf');
+    font-family: "Neue Montreal";
+    src: url('../public/Font/NeueMontreal-Regular.otf');
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+h1{
+    font-size: 4rem;
+    font-family: "Giaza", sans-serif;
+    height: auto;
+}
+h2{
+    font-size: 1.5rem;
+}
+h3,
+p{
+    font-size: 1rem;
+}
+h2,
+h3,
+p{
+    font-family: "Neue Montreal", serif;
+}
+
+.header--wrapper{
+    position: fixed;
+    width: 100vw;
+    height: 3rem;
+    margin-top: 2.125rem;
+    z-index: 20;
+    .nav--toggle{
+        height: 100%;
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .toggle--wrapper{
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            row-gap: .2rem;
+            .toggle--btn{
+                background: $secondaryColor;
+                border-radius: 1.5rem;
+                height: 25%;
+                &:first-child,
+                &:last-child{
+                    width: 50%;
+                }
+                &:nth-child(2){
+                    width: 100%;
+                }
+                &:first-child{
+                    margin-right: auto;
+                }
+                &:last-child{
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+}
+.home--container{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .home--bg{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;  
+        }
+    }
+    .home--bg--overlay{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background: $primaryGradient;
+    }
+    .home--main--content{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem 2rem;
+        .home--title--container{
+            width: 100%;
+            height: 75%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            row-gap: .5rem;
+            .home--title,
+            .home--sub-title{
+                width: fit-content;
+                height: fit-content;
+                overflow: hidden;
+                color: $secondaryColor;
+            }
+        }
+        .home--paragraf--container{
+            width: 100%;
+            height: 25%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            row-gap: .5rem;
+            .home--paragraf{
+                width: 75%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                color: $secondaryColor;
+                text-align: right;
+            }
+            .home--cta--btn{
+                width: 75%;
+                height: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                a{
+                    width: 75%;
+                    height: 50%;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: center;
+                    text-decoration: none;
+                    .arrow--btn{
+                        width: 25%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: $tertierColor;
+                        svg{
+                            max-width: 100%;
+                            max-height: 100%;
+                        }
+                    }
+                    .link--btn{
+                        width: 75%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: $tertierColor;
+                        font-weight: bold;
+                        background: $transparentPrimaryColor;
+                    }
+                }
+            }
+        }
+    }
+}
+.about--section{
+    position: relative;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    .about--parallax--img{
+        position: absolute;
+        padding: 1.5rem 2rem;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        .img--container{
+            width: 50%;
+            height: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                box-shadow: $primaryShadow;
+            }
+        }
+    }
+    .about--title--container{
+        width: 100%;
+        height: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: hidden;
+        h2{
+            font-weight: 700;
+            color: $tertierColor;
+        }
+    }
+    .about--main--content{
+        width: 100%;
+        height: 75%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .about--paragraf--container{
+            width: 100%;
+            height: 65%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+            p:first-child{
+                width: 75%;
+            }
+            p:last-child{
+                width: 75%;
+                text-align: right;
+                margin-left: auto;
+            }
+        }
+        .btn--container{
+            width: 100%;
+            height: 15%;
+            .about--btn{
+                width: 75%;
+                height: 100%;
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                background: $transparentPrimaryColor;
+                border-bottom: solid 2px $primaryColor;
+                text-decoration: none;
+            }
+            .btn--icon--container{
+                width: 25%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .btn--text--container{
+                color: $primaryColor;
+                width: 75%;
+                display: flex;
+                align-items: center;
+                padding-left: 1.5rem;
+                p{
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+.event--container{
+    padding: 1.5rem 0;
+    height: auto;
+    .title--container{
+        width: 100%;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 2rem;
+        h3{
+            font-weight: bold;
+            color: $tertierColor;
+        }
+    }
+    .event--main--content{
+        width: 100%;
+        height: auto;
+        padding: 0 2rem;
+        .dropdown--control{
+            height: 10vh;
+            display: flex;
+            align-items: center;
+            border-bottom: solid 2px $primaryColor;
+            cursor: pointer;
+            .dropdown--number{
+                width: 15%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                p{
+                    font-size: 3rem;
+                    font-weight: bold;
+                }
+            }
+            .dropdown--title{
+                width: 60%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                h2{
+                    font-size: 1.25rem;
+                    font-weight: bold;
+                }
+            }
+            .dropdown--icon{
+                width: 25%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transform: rotate(0);
+                transition: transform .7s;
+            }
+            &.active{
+                .dropdown--icon{
+                    transform: rotate(90deg);
+                }
+            }
+        }
+        .dropdown--content{
+            width: 100%;
+            height: 0;
+            background: $tertierColor;
+            transition: .7s;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .dropdown--paragraf--container{
+                height: 50%;
+                padding: .5rem .25rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                .paragraf--container{
+                    width: 75%;
+                    overflow: hidden;
+                    p{
+                        color: $secondaryColor;
+
+                    }
+                }
+                .play--btn--container{
+                    width: 75%;
+                    height: 15%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                   .btn--text{
+                    width: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    p{
+                        color: $secondaryColor;
+                    }
+                   }
+                   .btn--icon{
+                    width: 25%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    svg{
+                        width: 50%;
+                        height: 50%;
+                    }
+                   }
+                }
+            }
+            .video--container{
+                width: 100%;
+                height: 50%;
+                padding: .5rem .25rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            &.active{
+                height: 50vh;
+            }
+        }
+    }
+}
+.menu--section{
+    height: 100vh;
+}
+
+@media screen and (min-width: 768px) {
+    .header--wrapper{
+        margin-top: 1rem;
+    }
+    .home--paragraf--container{
+        width: 100%;
+        row-gap: 1rem;
+        .home--paragraf{    
+            max-width: 50%;
+        }
+        .home--cta--btn{
+            max-width: 50%;
+            a{
+                max-width: 60%;
+                min-height: 100%;
+            }
+        }
+    }
+    .about--section{
+        height: 100vh;
+        .about--parallax--img{
+            .img--container{
+                height: 50%;
+            }
+        }
+        .about--paragraf--container{
+            p{
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .event--container{
+        .event--main--content{
+            .dropdown--control{
+                height: 15vh;
+            }
+            .dropdown--content{
+                flex-direction: row;
+                .dropdown--paragraf--container{
+                    width: 65%;
+                    height: 100%;
+                    justify-content: space-evenly;
+                    .play--btn--container{
+                        width: 50%;
+                        justify-content: flex-end;
+                        .btn--icon{
+                            svg{
+                                width: 25%;
+                                height: 25%;
+                            }
+                        }
+                    }
+                }
+                .video--container{
+                    width: 35%;
+                    height: 100%;
+                }
+                &.active{
+                    height: 35vh;   
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1024px) {
+    .header--wrapper{
+        margin-top: 1.5rem;
+    }
+    .home--title{
+        h1{
+            font-size: 6.5rem;
+        }
+    }
+    .home--sub-title{
+        font-size: 3.5rem;
+    }
+    .home--paragraf--container{
+        row-gap: 1rem;
+        .home--paragraf{    
+            max-width: 50%;
+            p{
+                max-width: 75%;
+                font-size: 1.5rem;
+            }
+        }
+        .home--cta--btn{
+            max-width: 50%;
+            a{
+                max-width: 50%;
+                min-height: 75%;
+                p{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+    .about--title--container{
+        h2{
+            font-size: 2rem;
+        }
+    }
+    .about--paragraf--container{
+        p{
+            max-width: 50%;
+        }
+    }
+    .event--container{
+        .event--main--content{
+            .dropdown--control{
+                .dropdown--title{
+                    justify-content: flex-start;
+                    h2{
+                        font-size: 2rem;
+                    }
+                }
+            }
+            .dropdown--content{
+                .dropdown--paragraf--container{
+                    .paragraf--container{
+                        p{
+                            width: 75%;
+                        }
+                    }
+                    .play--btn--container{
+                        width: 25%;
+                    }
+                }
+            }
+        }
+    }
+}
